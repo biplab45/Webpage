@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS Photography</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #1e1e2f, #0f0f1e);
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s;
+        }
+
+        .navbar .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .navbar .logo a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: -10px 30px;
+            margin-left: 50px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background: #00bfff;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            transition: width 0.3s;
+        }
+
+        .navbar .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 100px 20px;
+            margin-top: 60px; /* Adjust for navbar */
+            background: rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 4.5em;
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .header p {
+            font-size: 1.6em;
+            margin: 20px 0;
+            opacity: 0.8;
+            animation: fadeIn 2s ease-out 0.5s;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: 3.5em;
+            margin: 0 0 20px;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .section p {
+            font-size: 1.4em;
+            margin: 0;
+            opacity: 0.8;
+            animation: fadeInUp 2s ease-out 0.5s;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .gallery .item {
+            width: 300px;
+            height: 200px;
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery .item:hover img {
+            opacity: 0.7;
+        }
+
+        .gallery .item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery .item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery .item .overlay h3 {
+            color: #fff;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: auto;
+            border-top: 2px solid #00bfff;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .call{
+            margin-left: 50px;
+            padding-right: 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo"><a href="#">BS Photography</a></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact" class="call">Contact</a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>BS Photography</h1>
+        <p>Capturing Moments with a Futuristic Touch</p>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>Welcome to BS Photography. We specialize in capturing stunning visuals that blend futuristic aesthetics with timeless beauty. Our mission is to bring your moments to life with a touch of modern elegance.</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <div id="gallery" class="section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <!-- Sample images, replace with your own -->
+            <div class="item">
+                <img src="Photos/IMG_20240301_213842_111.jpg" alt="Sample Photo 1">
+                <div class="overlay">
+                    <h3>Photo 1</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Photos/Picsart_24-03-24_20-42-54-330.jpg" alt="Sample Photo 2">
+                <div class="overlay">
+                    <h3>Photo 2</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Photos/Picsart_24-06-24_10-29-02-263.jpg" alt="Sample Photo 3">
+                <div class="overlay">
+                    <h3>Photo 3</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Photos/Picsart_24-06-24_10-50-00-763.jpg" alt="Sample Photo 4">
+                <div class="overlay">
+                    <h3>Photo 4</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you have any inquiries or want to book a session, feel free to reach out to us. We're here to help you capture your moments with style.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Biplab Goswami. All rights reserved.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Add a fading effect to images on load
+        document.querySelectorAll('.gallery .item img').forEach(img => {
+            img.onload = () => {
+                img.style.opacity = 1;
+                img.style.transition = 'opacity 1s ease-in-out';
+            };
+            img.style.opacity = 0;
+        });
+    </script>
+</body>
+</html>
